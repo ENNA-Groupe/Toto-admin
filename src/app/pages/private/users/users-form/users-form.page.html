@@ -1,0 +1,109 @@
+<ion-content> 
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <ion-row>
+      <ion-col size-xs="12" size-md="6" class="ion-padding">
+        <ion-list>
+          <ion-row>
+            <ion-col size="12" class="form-photo">
+              <ion-img [src]="photo" width='100%' heigth="100%" ></ion-img>
+              <ion-button color="light" class="choosePhoto"  (click)="fileInput.click()">
+                Changer
+                <ion-icon color="danger" slot="end" name="create-outline"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <input 
+              type="file" 
+              (change)="onUploadChange($event)" 
+              accept=".png, .jpg, .jpeg, .pdf"
+              style="display:none"
+              #fileInput
+               />
+              <!-- <ion-button (click)="onChoose()">Choisir</ion-button> -->
+            </ion-col>
+          </ion-row>
+        </ion-list>
+      </ion-col>
+      
+      <ion-col size-xs="12" size-md="6" class="ion-padding">
+        <ion-list >
+          <ion-list-header>
+            <ion-label> {{title}}</ion-label>
+          </ion-list-header>
+          
+          <ion-item>
+            <ion-label position="stacked" color="primary">Nom</ion-label>
+            <ion-input formControlName="nom" type="text" spellcheck="false" autocapitalize="on" required>
+            </ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked" color="primary">Prenom</ion-label>
+            <ion-input formControlName="prenom" type="text" spellcheck="false" autocapitalize="off" required>
+            </ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked" color="primary">Contact 1</ion-label>
+            <ion-input formControlName="contact1" type="text" spellcheck="false" autocapitalize="off" required>
+            </ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked" color="primary">Contact 2</ion-label>
+            <ion-input formControlName="contact2" type="text" spellcheck="false" autocapitalize="off" required>
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked" color="primary">Identifiant</ion-label>
+            <ion-input formControlName="identifiant" type="text" spellcheck="false" autocapitalize="off" required>
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked" color="primary">Salaire</ion-label>
+            <ion-input formControlName="salaire" type="number" spellcheck="false" autocapitalize="off" required>
+            </ion-input>
+          </ion-item>
+          <ion-text class="ion-padding-start" color="danger"
+          *ngIf="(nom.invalid && (nom.dirty || nom.touched))">
+            <small  *ngIf="nom.errors.required" >
+              Le nom est requis.
+            </small>
+          </ion-text>
+          <ion-text class="ion-padding-start" color="danger"
+          *ngIf="(contact1.invalid && (contact1.dirty || contact1.touched))">
+            <small  *ngIf="contact1.errors.required" >
+              Le contact 1 est requis.
+            </small>
+            <small  *ngIf="contact1.errors.minlength" >
+              Le contact doit être superieur à 8 charactères.
+            </small>
+          </ion-text>
+          <ion-text class="ion-padding-start" color="danger"
+          *ngIf="(identifiant.invalid && (identifiant.dirty || identifiant.touched))">
+            <small  *ngIf="identifiant.errors.minlength" >
+              L' identifiant doit être superieur à 2 charactères.
+            </small>
+            <small  *ngIf="identifiant.errors.required" >
+              L' identifiant est requis.
+            </small>
+          </ion-text>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button type="reset" color="light" expand="block">Effacer</ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button [disabled]="!form.valid" type="submit" expand="block">Valider</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-list >
+      </ion-col>
+    </ion-row>
+      
+    
+
+  </form>
+</ion-content>

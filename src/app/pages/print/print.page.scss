@@ -1,0 +1,20 @@
+#print{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.header{
+//    height: 20%;
+//    background-color: greenyellow;
+}
+
+.content{
+    height: 70%;
+}
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

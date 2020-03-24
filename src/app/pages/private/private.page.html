@@ -1,0 +1,81 @@
+<ion-header mode="ios">
+    <ion-toolbar mode="ios">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title *ngIf="!isSearching" color="primary">
+          AUBERGE DES AMIS
+      </ion-title>
+      <div class="text-center" *ngIf="isSearching">
+        <ion-searchbar mode="ios"  placeholder="Recherche..." [(ngModel)]="data.searchValue" 
+        autofocus="true"></ion-searchbar>
+      </div>
+     
+  
+  
+      <ion-buttons slot="end">
+        <!-- <ion-button *ngIf="!isSearching" (click)="onSearch(true)">
+          <ion-icon slot="icon-only" name="search"></ion-icon>
+        </ion-button>
+        <ion-button *ngIf="isSearching" (click)="onSearch(false)">
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button> -->
+        <ion-button (click)="onClick()">
+          <ion-icon slot="icon-only" name="notifications"></ion-icon>
+          <ion-badge color="primary" mode="ios">42</ion-badge>
+        </ion-button>
+      </ion-buttons>
+  
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-app>
+      <ion-split-pane contentId="main-content">
+        <ion-menu contentId="main-content">
+          <ion-content class="background">
+            <ion-list lines="none" id="list-top">
+              <ion-item routerLink="/private/profil">
+                <ion-avatar slot="start">
+                  <img [src]="user.photo" />
+                </ion-avatar>
+                <ion-label color="warning">{{user.nom}} {{user.prenom}}</ion-label>
+              </ion-item>
+            </ion-list>
+  
+            <ion-list lines="none" id="list-middle">
+              <ion-menu-toggle autoHide="false" *ngFor="let p of appPages; let i = index">
+                <ion-item [routerLink]="p.url" routerLinkActive="active" routerDirection="root" detail="false">
+                  <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                  <ion-label color="primary">
+                    {{p.title}}
+                  </ion-label>
+                </ion-item>
+  
+              </ion-menu-toggle>
+            </ion-list>
+  
+            <ion-list lines="none" id="list-bottom">
+              <ion-menu-toggle autoHide="false">
+                <ion-item button (click)="onLogout()" detail="false">
+                  <ion-icon slot="start" color="danger" name="log-out-outline"></ion-icon>
+                  <ion-label color="danger">
+                    Deconnexion
+                  </ion-label>
+                </ion-item>
+              </ion-menu-toggle>
+  
+            </ion-list>
+          </ion-content>
+        </ion-menu>
+  
+        <ion-router-outlet id="main-content"></ion-router-outlet>
+  
+      </ion-split-pane>
+  
+    </ion-app>
+  </ion-content>
+  <ion-footer mode="ios" *ngIf="isDesktop">
+    <ion-toolbar mode="ios">
+      <ion-title>ennasoftware@ennagroupe.com</ion-title>
+    </ion-toolbar>
+  </ion-footer>

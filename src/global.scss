@@ -1,0 +1,100 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+ 
+@media print {
+    // body{
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
+      // position: absolute;
+      // left: 0; top: 0; right: 0;
+      // bottom: 0;
+    // }
+    // .isPrinting > * { display: none; }
+    // .isPrinting app-print { 
+    //   display: block;
+      // -webkit-print-color-adjust: exact;
+      // width: 100%;
+    //   height: 1100px; 
+      // background: white;
+    // }
+  
+    // #print{
+    //   page-break-after: always;
+    // }
+  }
+  
+  // @page {
+  //   size: A4;
+  //   margin: 0;
+  //   page-break-after: always;
+  //   background-color: white;
+  // }
+  
+
+.sc-ion-popover-md-h{
+    --width: 350px !important;
+}
+
+// .sc-ion-popover-md-h.location{
+//     --heigth: 600px !important;
+// }
+
+.sc-ion-modal-md-h{
+    --width: 800px !important;
+    // --height: 500px !important;
+}
+
+
+.list-md{
+    background: rgba($color: #ffff, $alpha: 0.9) !important;
+}
+
+// ion-tab-button{
+//     max-width: 100% !important;
+//     background-color: rgba($color: blue, $alpha: 0.4) ;
+// }
+
+// .form-photo{
+//     height: 200px;
+//     width: 200px;
+// }
+
+// ion-tab-bar{
+//     height: 40px !important;
+//     --color-selected: var(--ion-color-danger);
+//     --color: black;
+// }
+
+// ion-label{
+//     font-size: 2em;
+// }
+
+
+//personal
+.text-center{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.choosePhoto{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+.title1{
+    font-size: 3em;
+    font-weight: bold;
+}

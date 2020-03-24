@@ -1,0 +1,55 @@
+<ion-card>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <ion-list>
+      <ion-list-header>
+        <ion-label>Connexion</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label position="stacked" color="primary">Username</ion-label>
+        <ion-input formControlName="identifiant" type="text" spellcheck="false" autocapitalize="off" required>
+        </ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="stacked" color="primary">Password</ion-label>
+        <ion-input formControlName="password" type="{{passwordType}}" required>
+        </ion-input>
+        <ion-button fill="clear" slot="end" (click)="onSeePassword()">
+          <ion-icon slot="icon-only" *ngIf="passwordType==='password'" name="eye"></ion-icon>
+          <ion-icon slot="icon-only"*ngIf="passwordType==='text'" name="eye-off"></ion-icon>
+        </ion-button>
+      </ion-item>
+  
+      <ion-text class="ion-padding-start" color="danger"
+        *ngIf="(identifiant.invalid && (identifiant.dirty || identifiant.touched))">
+        <small *ngIf="identifiant.errors.required">
+          L' identifiant est requis.
+        </small>
+        <small *ngIf="identifiant.errors.minlength">
+          L' identifiant doit être superieur à 4 characteres.
+        </small>
+        <small *ngIf="identifiant.errors.maxlength">
+          L' identifiant doit être inferieur à 30 characteres.
+        </small>
+      </ion-text>
+      <ion-text class="ion-padding-start" color="danger"
+      *ngIf="(password.invalid && (password.dirty || password.touched))">
+        <small *ngIf="password.errors.required">
+          Le mot de passe est requis.
+        </small>
+        <small *ngIf="password.errors.minlength">
+          Le mot de passe doit être superieur à 8 characteres.
+        </small>
+        <small *ngIf="password.errors.maxlength">
+          Le mot de passe doit être inferieur à 20 characteres.
+        </small>
+      </ion-text>
+    </ion-list>
+  
+    <ion-row>
+      <ion-col>
+        <ion-button [disabled]="!form.valid" type="submit" expand="block">Login</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-card>

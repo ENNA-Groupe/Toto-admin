@@ -1,0 +1,59 @@
+<ion-content>
+
+    <div class="text-center">
+        <div style="width: 300px;">
+            <ion-searchbar placeholder="Recherche..." [(ngModel)]="searchValue" mode="ios"></ion-searchbar>
+        </div>
+    </div>
+
+
+
+    <div *ngIf="!trash">
+        <ion-list *ngIf="isDesktop">
+            <ion-list-header>
+                <ion-label color="tertiary">Listes  des fonctionnalités</ion-label>
+            </ion-list-header>
+            <ion-item *ngFor="let item of controls|searchBy:searchValue; let i=index;">
+                <ion-note slot="start">{{i+1}}</ion-note>
+                <ion-label color="secondary">{{item.nom}} :{{item.operation}}</ion-label>
+                <ion-buttons side="end">
+                    <ion-button color="primary" (click)="onShow(item.id)">
+                        <ion-icon name="eye"></ion-icon>
+                    </ion-button>
+                    <ion-button color="warning" (click)="onEdit(item.id)">
+                        <ion-icon name="create"></ion-icon>
+                    </ion-button>
+                    <ion-button color="danger" (click)="onDelete(item.id)">
+                        <ion-icon name="trash"></ion-icon>
+                    </ion-button>
+                </ion-buttons>
+            </ion-item>
+        </ion-list>
+        <ion-list *ngIf="!isDesktop">
+            <ion-list-header>
+                <ion-label color="tertiary">Listes  des fonctionnalités</ion-label>
+            </ion-list-header>
+            <ion-item-sliding *ngFor="let item of controls|searchBy:searchValue;let i=index">
+                <ion-item>
+                    <ion-note slot="start">{{i+1}}</ion-note>
+                    <ion-label color="secondary">{{item.groupe}} :{{item.operation}}</ion-label>
+                    <p>{{item.description}}</p>
+                </ion-item>
+                <ion-item-options side="end">
+                    <ion-item-option color="primary" (click)="onShow(item.id)">
+                        <ion-icon name="eye"></ion-icon>
+                    </ion-item-option>
+                    <ion-item-option color="warning" (click)="onEdit(item.id)">
+                        <ion-icon name="create"></ion-icon>
+                    </ion-item-option>
+                    <ion-item-option color="danger" (click)="onDelete(item.id)">
+                        <ion-icon name="trash"></ion-icon>
+                    </ion-item-option>
+                </ion-item-options>
+            </ion-item-sliding>
+        </ion-list>
+        <div class="text-center" *ngIf="(controls|searchBy:searchValue).length===0">
+            <ion-label color="danger">Aucune fonctionnalité trouvée!</ion-label>
+        </div>
+    </div>
+</ion-content>

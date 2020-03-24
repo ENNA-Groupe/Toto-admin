@@ -1,0 +1,108 @@
+<!-- informations -->
+<ion-content  *ngIf="menu==='infos'">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card mode="ios">
+          <ion-row>
+            <ion-col size-sm="6" size="12"> <img src="{{item.photo}}" alt=""></ion-col>
+            <ion-col size-sm="6" size="12">
+              <ion-card-content>
+                <ion-list mode="ios">
+                  <ion-list-header mode="ios">
+                    <ion-label>Informations</ion-label>
+                  </ion-list-header>
+                  <ion-item mode="ios">
+                    <ion-col size="4">Nom</ion-col>
+                    <ion-col size="8">:<ion-text color="secondary">{{item.nom}}</ion-text>
+                    </ion-col>
+                  </ion-item>
+                  <ion-item mode="ios">
+                    <ion-col size="4">Prenom</ion-col>
+                    <ion-col size="8">:<ion-text color="secondary">{{item.prenom}}</ion-text>
+                    </ion-col>
+                  </ion-item>
+                  <ion-item mode="ios">
+                    <ion-col size="4">Contact</ion-col>
+                    <ion-col size="8">:<ion-text color="secondary">{{item.contact}}</ion-text>
+                    </ion-col>
+                  </ion-item>
+                  <ion-item mode="ios">
+                    <ion-col size="4">Ajouté le</ion-col>
+                    <ion-col size="8">:<ion-text color="secondary">{{item.createdAt|date:'dd-MM-yyyy HH:mm'}}</ion-text>
+                    </ion-col>
+                  </ion-item>
+                  <ion-item mode="ios">
+                    <ion-col size="4">Modifié le</ion-col>
+                    <ion-col size="8">:<ion-text color="secondary">{{item.updatedAt|date:'dd-MM-yyyy HH:mm'}}</ion-text>
+                    </ion-col>
+                  </ion-item>
+                </ion-list>
+              </ion-card-content>
+            </ion-col>
+          </ion-row>          
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<!-- activites -->
+<ion-content *ngIf="menu==='activites'">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <ion-list>
+          <ion-list-header mode="ios">
+            <ion-label>Activités</ion-label>
+          </ion-list-header>
+          <ion-card mode="ios" *ngFor="let activite of activities">
+            <!-- <ion-label> {{activite.model}}:{{activite.operation}}</ion-label> -->
+            <p>
+              <ion-note color="primary" *ngIf="activite.typeOperation==='add'" mode="ios">{{activite.createdAt| date: 'dd-MM-yy HH:mm' }} : </ion-note>
+              <ion-note color="success" mode="ios" *ngIf="activite.typeOperation==='login'">{{activite.createdAt| date: 'dd-MM-yy HH:mm' }} : </ion-note>
+              <ion-note color="danger" mode="ios" *ngIf="activite.typeOperation==='delete'">{{activite.createdAt| date: 'dd-MM-yy HH:mm' }} : </ion-note>
+              <ion-note color="warning" mode="ios" *ngIf="activite.typeOperation==='edit'">{{activite.createdAt| date: 'dd-MM-yy HH:mm' }} : </ion-note>
+              <ion-note color="secondary" mode="ios" *ngIf="activite.typeOperation==='logout'">{{activite.createdAt| date: 'dd-MM-yy HH:mm' }} : </ion-note>
+              <ion-note color="danger" mode="ios" *ngIf="activite.typeOperation==='restore'">{{activite.createdAt| date: 'dd-MM-yy HH:mm' }} : </ion-note>
+              {{ activite.description }}</p>
+          </ion-card>
+        </ion-list>
+        <ion-infinite-scroll  threshold="20%" (ionInfinite)="loadData($event)">
+          <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+           
+          </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+<!-- parametres -->
+<ion-content *ngIf="menu==='parametres'">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card mode="ios">
+          <ion-list mode="ios">
+            <ion-item mode="ios" *ngFor="let control of userControls">
+              <ion-label>{{control.description}}</ion-label>
+              <ion-checkbox mode="ios" [(ngModel)]="control.isChecked" slot="start"></ion-checkbox>
+            </ion-item>
+          </ion-list>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button color="warning" (click)="onReset()">
+      <ion-icon name='refresh'></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success" (click)="onSave()">
+      <ion-icon name='checkmark'></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>  

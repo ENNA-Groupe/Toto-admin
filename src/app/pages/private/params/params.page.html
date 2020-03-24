@@ -1,0 +1,35 @@
+<ion-tabs *ngIf="!isDesktop" mode="ios" >
+  <ion-tab-bar slot="bottom" color="primary">
+    <ion-tab-button tab="mesures">
+      <ion-icon name="flash"></ion-icon>
+      <ion-label>Mesures</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="controls">
+      <ion-icon name="apps"></ion-icon>
+      <ion-label>Droits</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="infos">
+      <ion-icon name="send"></ion-icon>
+      <ion-label>Infos</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+
+<ion-header *ngIf="isDesktop" mode="ios">
+  <ion-toolbar class="toolbar2" color="primary">
+    <ion-segment value="mesures" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="mesures">
+        <ion-label>Mesures</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="controls">
+        <ion-label>Droits</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="infos">
+        <ion-label>Infos</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="isDesktop">
+  <ion-router-outlet></ion-router-outlet>
+</ion-content>

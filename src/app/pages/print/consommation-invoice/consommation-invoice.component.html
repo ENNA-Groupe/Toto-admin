@@ -1,0 +1,249 @@
+<div class="text-center">
+
+  <div id="pdf">
+    <table>
+      <colgroup width="37%"></colgroup>
+      <colgroup width="26%"></colgroup>
+      <colgroup width="13%"></colgroup>
+      <colgroup width="24%"></colgroup>
+
+      <tr>
+        <td style="border-bottom: 2px solid #f46036" colspan=2 height="84" align="left" valign=bottom><b>
+            <font face="Franklin Gothic Medium" size=6 color="#493670">AUBERGES DES AMIS</font>
+          </b></td>
+        <td style="border-bottom: 2px solid #f46036" align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+        <td style="border-bottom: 2px solid #f46036" align="left" valign=bottom>
+          <font face="Franklin Gothic Medium" size=6 color="#F46036">Facture</font>
+        </td>
+        <td style="border-bottom: 2px solid #f46036" align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+      </tr>
+      <tr>
+        <td height="41" align="left" valign=middle><b><i>
+              <font face="Franklin Gothic Book" size=5 color="#F46036"></font>
+            </i></b></td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+        <td align="left" valign=bottom><b>
+            <font face="Franklin Gothic Book" size=3 color="#080808">DATE:</font>
+          </b></td>
+        <td align="left" valign=bottom sdval="43894" sdnum="1033;1033;MMMM D\, YYYY;@">
+          <font face="Franklin Gothic Medium" size=3 color="#080808">{{consommation.createdAt|date:'dd/MM/yyyy'}}</font>
+        </td>
+      </tr>
+      <tr>
+        <td height="18" align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+        <td align="left" valign=bottom><b><i>
+              <font face="Franklin Gothic Book"><br></font>
+            </i></b></td>
+        <td align="left" valign=bottom><b>
+            <font face="Franklin Gothic Book" size=3 color="#080808">Facture:</font>
+          </b></td>
+        <td align="left" valign=bottom sdval="100" sdnum="1033;">
+          <font face="Franklin Gothic Medium" size=3 color="#080808">{{consommation.id}}</font>
+        </td>
+      </tr>
+
+      <tr>
+        <td height="17" align="left" valign=bottom><b><i>
+              <font face="Franklin Gothic Book"><br></font>
+            </i></b></td>
+        <td align="left" valign=bottom><b><i>
+              <font face="Franklin Gothic Book"><br></font>
+            </i></b></td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Book" color="#080808"><br></font>
+        </td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Medium" color="#080808"><br></font>
+        </td>
+      </tr>
+      <tr>
+        <td height="18" align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+        <td align="left" valign=bottom><b>
+            <font face="Franklin Gothic Book" size=3 color="#080808">Pour:</font>
+          </b></td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Medium" size=3 color="#080808">Consommation des produits</font>
+        </td>
+      </tr>
+      <tr>
+        <td height="18" align="left" valign=bottom><b>
+            <font face="Franklin Gothic Book" size=3 color="#080808">Adresse</font>
+          </b></td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Book" color="#080808"><br></font>
+        </td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Medium" color="#080808"><br></font>
+        </td>
+      </tr>
+      <tr>
+        <td height="18" align="left" valign=bottom><b>
+            <font face="Franklin Gothic Book" size=3 color="#080808">
+              kara-Togo
+            </font>
+          </b></td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+        <td align="left" valign=bottom><b>
+            <font face="Franklin Gothic Book" size=3 color="#080808">Client:</font>
+          </b></td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Medium" size=3 color="#080808">{{client.nom}} {{client.prenom}}</font>
+        </td>
+      </tr>
+      <tr>
+        <td height="18" align="left" valign=bottom><b>
+            <font face="Franklin Gothic Book" size=3 color="#080808">{{client.contact1}}/{{client.contact2}}</font>
+          </b></td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+        <td align="left" valign=bottom><i>
+            <font face="Franklin Gothic Book"><br></font>
+          </i></td>
+      </tr>
+      <tr>
+        <td height="18" align="left" valign=bottom><b>
+            <font face="Franklin Gothic Book" size=3 color="#080808">Aubergedesamis@gmail.com</font>
+          </b></td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+        <td align="left" valign=bottom><i>
+            <font face="Franklin Gothic Book"><br></font>
+          </i></td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Medium" size=3 color="#080808">{{client.adresse}}</font>
+        </td>
+      </tr>
+      <tr>
+        <td height="18" align="left" valign=bottom><b>
+            <font face="Franklin Gothic Book" color="#080808"><br></font>
+          </b></td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Medium" size=3 color="#080808">{{client.bp}}</font>
+        </td>
+      </tr>
+      <tr>
+        <td height="18" align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Medium" size=3 color="#080808">{{client.contact1}}/{{client.contact2}}</font>
+        </td>
+      </tr>
+      <tr>
+        <td height="18" align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Book" color="#080808"><br></font>
+        </td>
+      </tr>
+
+    </table>
+    <table>
+      <!-- <colgroup width="86"></colgroup>
+    <colgroup width="258"></colgroup>
+    <colgroup width="163"></colgroup>
+    <colgroup width="182"></colgroup> -->
+      <colgroup width="13%"></colgroup>
+      <colgroup width="37%"></colgroup>
+      <colgroup width="24%"></colgroup>
+      <colgroup width="26%"></colgroup>
+      <tr>
+        <td style="border-right: 1px solid #d9d9d9" height="36" align="center" valign=middle bgcolor="#F46036">
+          <font face="Franklin Gothic Medium" size=5 color="#FFFFFF">Quantité</font>
+        </td>
+        <td style="border-right: 1px solid #d9d9d9" height="36" align="center" valign=middle bgcolor="#F46036">
+          <font face="Franklin Gothic Medium" size=5 color="#FFFFFF">Désignation</font>
+        </td>
+        <td style="border-right: 1px solid #d9d9d9" height="36" align="center" valign=middle bgcolor="#F46036">
+          <font face="Franklin Gothic Medium" size=5 color="#FFFFFF">Prix unitaire</font>
+        </td>
+        <td align="center" valign=middle bgcolor="#F46036">
+          <font face="Franklin Gothic Medium" size=5 color="#FFFFFF">Prix total</font>
+        </td>
+      </tr>
+      <tr *ngFor="let item of consommation.products">
+        <td style="border-bottom: 1px solid #d9d9d9; border-left: 1px solid #d9d9d9; border-right: 1px solid #d9d9d9"
+          height="27" align="center" valign=bottom>
+          <font face="Franklin Gothic Book" size=3>{{item.consommationProduit.quantite}}</font>
+        </td>
+        <td style="border-bottom: 1px solid #d9d9d9; border-left: 1px solid #d9d9d9; border-right: 1px solid #d9d9d9"
+          align="center" valign=bottom
+          sdnum="1033;0;_(&quot;$&quot;* #,##0.00_);_(&quot;$&quot;* \(#,##0.00\);_(&quot;$&quot;* &quot;-&quot;??_);_(@_)">
+          <font face="Franklin Gothic Book" size=3>{{getCategorie(item.categorieId)}} {{item.nom}}</font>
+        </td>
+        <td style="border-bottom: 1px solid #d9d9d9; border-left: 1px solid #d9d9d9; border-right: 1px solid #d9d9d9"
+          align="center" valign=bottom
+          sdnum="1033;0;_(&quot;$&quot;* #,##0.00_);_(&quot;$&quot;* \(#,##0.00\);_(&quot;$&quot;* &quot;-&quot;??_);_(@_)">
+          <font face="Franklin Gothic Book" size=3>{{item.consommationProduit.prixUnitaire}}</font>
+        </td>
+        <td style="border-bottom: 1px solid #d9d9d9; border-left: 1px solid #d9d9d9; border-right: 1px solid #d9d9d9"
+          align="center" valign=bottom
+          sdnum="1033;0;_(&quot;$&quot;* #,##0.00_);_(&quot;$&quot;* \(#,##0.00\);_(&quot;$&quot;* &quot;-&quot;??_);_(@_)">
+          <font face="Franklin Gothic Book" size=3>
+            {{item.consommationProduit.prixUnitaire * item.consommationProduit.quantite}}
+          </font>
+        </td>
+      </tr>
+
+      <tr>
+        <td height="27" align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+        <td align="left" valign=bottom>
+          <font face="Franklin Gothic Book"><br></font>
+        </td>
+        <td align="right" valign=bottom sdnum="1033;0;@  "><b>
+            <font face="Franklin Gothic Book" size=3 color="#080808">TOTAL </font>
+          </b></td>
+        <td
+          style="border-top: 1px solid #d9d9d9; border-bottom: 1px solid #d9d9d9; border-left: 1px solid #d9d9d9; border-right: 1px solid #d9d9d9"
+          align="center" valign=bottom sdval="0"
+          sdnum="1033;0;_(&quot;$&quot;* #,##0.00_);_(&quot;$&quot;* \(#,##0.00\);_(&quot;$&quot;* &quot;-&quot;??_);_(@_)">
+          <font face="Franklin Gothic Book" size=3 >{{consommation.factureTotale}} FCFA</font>
+        </td>
+      </tr>
+    </table>
+    <div class="text-center">
+      <font color="#080808" size=3>MERCI ET A BIENTOT !</font>
+    </div>
+  </div>
+</div>
